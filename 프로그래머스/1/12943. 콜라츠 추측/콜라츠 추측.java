@@ -1,12 +1,9 @@
 class Solution {
     public int solution(int num) {
         int answer = 0;
-        while(true)
+        while(num!=1)
         {
-            if(num==1)
-            {
-                break;
-            }
+             answer++; 
             if(num%2==0)
             {
                 num = num / 2;
@@ -16,11 +13,10 @@ class Solution {
             {
                 num = num*3+1;
             }
-            else if(num!=1)
+            else if(answer>=500)
             {
                 return -1;
             }
-            answer++; 
         }
         return answer;
     }
