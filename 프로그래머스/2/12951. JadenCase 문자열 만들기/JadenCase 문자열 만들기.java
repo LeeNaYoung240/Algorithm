@@ -12,7 +12,9 @@ class Solution {
             }
             else if(check)
             {
+                // 단어의 첫 글자를 대문자로 변환
                 c = Character.toUpperCase(c);
+                // 다음 글자는 더 이상 단어의 첫글자가 아님
                 check = false;
             }
             sb.append(c);
