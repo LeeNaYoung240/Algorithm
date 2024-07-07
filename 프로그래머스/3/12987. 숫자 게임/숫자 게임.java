@@ -5,14 +5,12 @@ class Solution {
         Arrays.sort(A);
         Arrays.sort(B);
         
-        int A_len = A.length-1; // A 배열 마지막 인덱스 저장
-        int B_len = A_len; // B 배열 마지막 인덱스 저장
-        for(int i=A_len;i>=0;i--)
+        for(int i=A.length-1, j=B.length-1; i>=0;i--)
         {
-            if(A[i]<B[B_len])
+            if(A[i]<B[j])
             {
                 answer++;
-                B_len--;
+                j--;
             }
         }
         return answer;
