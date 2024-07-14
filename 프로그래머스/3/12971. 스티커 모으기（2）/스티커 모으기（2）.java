@@ -2,7 +2,7 @@ class Solution {
     private static int[] dp1, dp2;
 
     public static int solution(int sticker[]) {
-        int n = sticker.length;
+        int n = sticker.length; // 5
 
         if(n==1) return sticker[0];
 
