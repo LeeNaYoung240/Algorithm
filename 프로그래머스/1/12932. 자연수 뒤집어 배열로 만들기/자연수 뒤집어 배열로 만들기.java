@@ -1,18 +1,12 @@
+import java.util.*;
 class Solution {
     public int[] solution(long n) {
-        String[] str = String.valueOf(n).split("");
-        //1 2 3 4 5 
-        int num = str.length;
-        int[] answer = new int[num];
-        int[] x = new int[num];
-        for(int i=0;i<num;i++)
+        String str = String.valueOf(n); // 12345
+        int[] answer = new int[str.length()]; // [0, 0, 0, 0, 0]
+        
+        for(int i=0;i<answer.length;i++)
         {
-            x[i] = Integer.parseInt(str[i]); 
-        }
-        int idx = 0;
-        for(int i=num-1;i>=0;i--)
-        {
-            answer[idx++] = x[i];
+            answer[i] = Integer.parseInt(str.substring(answer.length-1-i,answer.length-i));
         }
         return answer;
     }
