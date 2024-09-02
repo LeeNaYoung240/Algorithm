@@ -3,10 +3,12 @@ class Solution {
         String answer = "";
         if(num%2==0)
         {
-            answer="Even";
+            answer = "Even";
         }
-        else 
-            answer="Odd";
+        else
+        {
+            answer = "Odd";   
+        }
         return answer;
     }
 }
