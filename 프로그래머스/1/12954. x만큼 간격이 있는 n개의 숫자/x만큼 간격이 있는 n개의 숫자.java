@@ -1,11 +1,10 @@
 class Solution {
     public long[] solution(int x, int n) {
-        long arr[] = new long[n];
-        for(int i=0;i<n;i++)
+        long[] answer = new long[n];
+        for(int i=1;i<=n;i++)
         {
-            arr[i] = x*(long)(i+1);
+            answer[i-1] = (long)x*i;
         }
-        return arr;
+        return answer;
     }
 }
-
