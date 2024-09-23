@@ -1,19 +1,17 @@
 import java.util.*;
 class Solution {
     public int solution(int n) {
-        int answer = 0;
-        int min = Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE; // min을 제일 큰 값으로 초기화하기
+        
         for(int i=1;i<=n;i++)
         {
             if(n%i==1)
             {
-                answer = i;
-                
-                if(answer < min)
+                if(min>i)
                 {
-                    min = answer;
+                    min = i;
                 }
-            }     
+            }
         }
         return min;
     }
