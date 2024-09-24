@@ -2,13 +2,10 @@ class Solution {
     public int solution(int num) {
         int cnt = 0;
         int answer = 0;
-        while(true)
+        while(num!=1)
         {
-            if(num==1)
-            {
-                break;
-            }
-            else if(num%2 == 0)
+        
+            if(num%2 == 0)
             {
                 num = num/2;
             }
@@ -19,10 +16,7 @@ class Solution {
             cnt++;
             if(cnt>=500)
             {
-                if(num!=1)
-                {
-                   return -1;
-                }
+                return -1;
             }
          }
         return cnt;
