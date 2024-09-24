@@ -1,27 +1,32 @@
 class Solution {
     public int[] solution(int[] arr) {
+        int[] answer = {-1};
+        int min = Integer.MAX_VALUE;
+        int idx = 0;
         if(arr.length == 1)
         {
-            int[] answer = {-1};
             return answer;
         }
         
-        int[] answer = new int[arr.length-1];
-        int min = arr[0];
-        
-        for(int i=1;i<arr.length;i++)
-        {
-            min = Math.min(min,arr[i]);
-        }
-        
-        int idx = 0;
         for(int i=0;i<arr.length;i++)
         {
-            if(arr[i] == min)
-                continue;
-            answer[idx++] = arr[i];
+            if(arr[i]<min)
+            {
+                min = arr[i];
+                idx = i;
+            }
         }
-      
-        return answer;
+        int[] result = new int[arr.length-1];
+        int resultIdx = 0;
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            if(i!= idx)
+            {
+                result[resultIdx] = arr[i];
+                resultIdx++;
+            }
+        }
+        return result;
     }
 }
