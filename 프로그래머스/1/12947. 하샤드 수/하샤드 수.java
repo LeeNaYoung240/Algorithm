@@ -1,25 +1,21 @@
+import java.util.*;
 class Solution {
     public boolean solution(int x) {
         boolean answer = true;
-        String[] s = String.valueOf(x).split(""); //10
-        int num = s.length;
-        int[] s_Int = new int[num];
         int sum = 0;
-        for(int i=0;i<num;i++)
+        int originX = x;
+        while(x!=0)
         {
-            s_Int[i] = Integer.parseInt(s[i]);
+            sum += (x%10);
+            x /= 10;
         }
-        for(int i=0;i<num;i++)
-        {   
-            sum+=s_Int[i];
-        }
-        if(x%sum==0)
+        if(originX%sum == 0)
         {
-            answer = true;
+            return answer;
         }
-        else{
-            answer = false;
+        else 
+        {
+            return !answer;   
         }
-        return answer;
     }
 }
