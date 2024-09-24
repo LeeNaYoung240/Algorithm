@@ -1,17 +1,18 @@
 class Solution {
     public int solution(int[] absolutes, boolean[] signs) {
-        int answer = 0;
-        int num = absolutes.length;
-        for(int i=0;i<num;i++)
+        int answer = 123456789;
+        int result = 0;
+        for(int i=0;i<absolutes.length;i++)
         {
-            if(signs[i])
+            if(signs[i] == true)
             {
-                answer += absolutes[i];
+                result += absolutes[i];
             }
-            else{
-                answer-=absolutes[i];
+            else if(signs[i] == false)
+            {
+                result -= absolutes[i];
             }
         }
-        return answer;
+        return result;
     }
 }
