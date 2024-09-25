@@ -8,20 +8,18 @@ class Solution {
         {
             cnt++;
         }
-        int idx = 0;
-        int idx2 = 0;
+        int idx1 = 0, idx2 = 0;
         if(cnt%2==1)
         {
-            idx = ch.length/2; // 인덱스 번호 저장
-            answer += ch[idx];
+            idx1 = ch.length / 2; 
+            answer += ch[idx1];
         }
         else{
-            idx = ch.length/2;
-            idx2 = ch.length/2-1;
+            idx1 = ch.length / 2 - 1;
+            idx2 = ch.length / 2;
+            answer += ch[idx1];
             answer += ch[idx2];
-            answer += ch[idx];
         }
-        
         return answer;
     }
 }
