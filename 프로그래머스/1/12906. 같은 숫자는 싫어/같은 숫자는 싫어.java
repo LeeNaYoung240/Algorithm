@@ -3,27 +3,23 @@ import java.util.*;
 public class Solution {
     public int[] solution(int []arr) {
         int[] answer;
-        Stack<Integer> st = new Stack<>();
-        st.push(arr[0]);
+        List<Integer> li = new ArrayList<Integer>();
+        li.add(arr[0]);
         
-        for(int i=0;i<arr.length;i++)
+        for(int i=1;i<arr.length;i++)
         {
-            if(st.peek()==arr[i])
+            if(arr[i]!=arr[i-1])
             {
-                continue;
-            }
-            else
-            {
-                st.push(arr[i]);
+                li.add(arr[i]);
             }
         }
+        answer = new int[li.size()];
         
-        answer = new int[st.size()];
-        for(int i=st.size()-1;i>=0;i--)
+        for(int i=0;i<li.size();i++)
         {
-            answer[i] = st.pop();
+            answer[i] = li.get(i);
         }
-
+        
         return answer;
     }
 }
