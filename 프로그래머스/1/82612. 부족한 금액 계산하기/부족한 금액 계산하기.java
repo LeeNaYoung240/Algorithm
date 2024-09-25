@@ -11,7 +11,8 @@ class Solution {
         {
            return 0;
         }
-        else{
+        else
+        {
             return sum - money;
         }
     }
