@@ -1,7 +1,5 @@
-import java.util.*;
 class Solution {
     public int solution(int[] number) {
-        int answer = 0;
         int cnt = 0;
         for(int i=0;i<number.length-2;i++)
         {
@@ -9,7 +7,7 @@ class Solution {
             {
                 for(int k=j+1;k<number.length;k++)
                 {
-                     if(number[i]+number[j]+number[k]==0)
+                    if(number[i]+number[j]+number[k]==0)
                     {
                         cnt++;
                     }
