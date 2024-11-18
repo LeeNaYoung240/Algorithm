@@ -4,8 +4,7 @@ class Solution {
         int[] answer = new int[2];
         int cntSame = 0, zeroNum = 0;
         int plusTotal = 0, minusTotal = 0;
-        Arrays.sort(lottos);
-        Arrays.sort(win_nums);
+    
         for(int i=0;i<lottos.length;i++)
         {
             for(int j=0;j<win_nums.length;j++)
