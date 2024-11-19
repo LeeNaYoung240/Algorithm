@@ -2,7 +2,6 @@ import java.util.*;
 class Solution {
     public int solution(int n, int[] lost, int[] reserve) {
         int answer = n;
-        
         Set<Integer> lostSet = new HashSet<>();
         Set<Integer> reserveSet = new HashSet<>();
         
@@ -32,10 +31,10 @@ class Solution {
                 reserveSet.remove(l+1);
             }
             else{
-                answer--; 
+                answer--;
             }
         }
         
         return answer;
-    }
+    }   
 }
