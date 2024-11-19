@@ -4,17 +4,16 @@ class Solution {
         int[] answer = new int[targets.length];
         Map<Character, Integer> map = new HashMap<>();
         
-        //keymap
         for(String s : keymap)
         {
             for(int i=0;i<s.length();i++)
             {
-                char key = s.charAt(i); // A B A C D
+                char key = s.charAt(i);
                 int value = map.getOrDefault(key, i+1);
                 map.put(key, Math.min(value, i+1));
             }
         }
-        //targets
+        
         for(int i=0;i<targets.length;i++)
         {
             for(int j=0;j<targets[i].length();j++)
@@ -25,13 +24,12 @@ class Solution {
                 {
                     answer[i] += map.get(key);
                 }
-                else {
+                else{
                     answer[i] = -1;
                     break;
                 }
             }
         }
-        
         return answer;
     }
 }
