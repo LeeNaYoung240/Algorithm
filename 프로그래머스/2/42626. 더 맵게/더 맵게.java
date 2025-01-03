@@ -9,19 +9,18 @@ class Solution {
             pq.offer(scovilles);
         }
         
-        int min = pq.peek();
-        while(min < K)
+        while(pq.size() > 1 && pq.peek() < K)
         {
-            if(pq.size() >= 2)
-            {
-                pq.add(pq.poll() + (pq.poll()*2));
-                min = pq.peek();
-                answer++;
-            }
-            else
-            {
-                return -1;
-            }
+            int fir = pq.poll();
+            int sec = pq.poll();
+            int total = fir + (sec * 2);
+            pq.add(total);
+            answer++;
+        }
+        
+        if(pq.peek() < K && pq.size() <= 1)
+        {
+            return -1;
         }
         
         return answer;
