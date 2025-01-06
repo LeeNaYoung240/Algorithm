@@ -30,6 +30,6 @@ class Solution {
             return new int[]{max.peek(), min.peek()};
         }
         
-        return new int[]{0,0};
+        return answer;
     }
 }
