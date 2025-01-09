@@ -1,24 +1,20 @@
 import java.util.*;
 class Solution {
     public int solution(int[][] sizes) {
-        int max_v = 0, max_h = 0;
+        int answer = 0;
+        int max_w = 0, max_h = 0;
+      
         for(int i=0;i<sizes.length;i++)
         {
-            Arrays.sort(sizes[i]); 
-            // 명함의 작은 값이 먼저 오게                   
+            int w = Math.max(sizes[i][0],sizes[i][1]); // 두개를 비교해서 큰 값 w에 저장
+            int h = Math.min(sizes[i][0],sizes[i][1]); // 두개를 비교해서 작은 값 h에 저장
+            
+            max_w = Math.max(max_w, w);
+            max_h = Math.max(max_h,h);
         }
-
-        for(int i=0;i<sizes.length;i++)
-        {
-            if(sizes[i][0]>max_v)
-            {
-                max_v = sizes[i][0];
-            }
-            if(sizes[i][1]>max_h)
-            {
-                max_h = sizes[i][1];
-            }
-        }
-        return max_v*max_h;
+        
+        answer = max_w*max_h;
+        
+        return answer;
     }
 }
